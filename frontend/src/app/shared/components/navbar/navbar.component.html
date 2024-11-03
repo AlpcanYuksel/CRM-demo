@@ -1,0 +1,34 @@
+<div class="navbar">
+  <a
+    class="tab"
+    routerLink="/customer/generalInfo"
+    routerLinkActive="active"
+    [class.active]="activeTab === 'generalInfo'"
+    (click)="setActiveTab('generalInfo'); $event.preventDefault()"
+    >Customer Info</a
+  >
+  <a
+    class="tab"
+    routerLink="/customer/customerAccount"
+    routerLinkActive="active"
+    [class.active]="activeTab === 'customerAccount'"
+    (click)="setActiveTab('customerAccount'); $event.preventDefault()"
+    >Customer Account</a
+  >
+  <a
+    class="tab"
+    routerLink="/customer/addressInfo"
+    routerLinkActive="active"
+    [class.active]="activeTab === 'address'"
+    (click)="setActiveTab('address'); $event.preventDefault()"
+    >Address</a
+  >
+  <a
+    class="tab"
+    routerLink="/customer/contactMediumInfo"
+    routerLinkActive="active"
+    [class.active]="activeTab === 'contactMedium'"
+    (click)="setActiveTab('contactMedium'); $event.preventDefault()"
+    >Contact Medium</a
+  >
+</div>

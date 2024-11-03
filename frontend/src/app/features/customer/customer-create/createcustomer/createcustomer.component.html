@@ -1,0 +1,58 @@
+<app-main-layout></app-main-layout>
+
+<body>
+  <div class="container">
+    <div class="in-container">
+      <h3 class="title">Create Customer</h3>
+      <div style="display: flex; align-items: center; margin-top: 10px">
+        <label for="natId" style="color: #29294a; margin-right: 10px">
+          Nationality ID*
+        </label>
+        <input id="natId" [(ngModel)]="natId" (input)="onInputChange()" />
+      </div>
+    </div>
+    <div class="buttons">
+      <button type="button" [routerLink]="['/customer/search']">CANCEL</button>
+      <button type="submit" [disabled]="!isNextEnabled" [ngStyle]="{
+          'background-color': isNextEnabled ? '#29294a' : '#717171B2'
+        }" style="
+          padding: 5px 15px;
+          border-radius: 5px;
+          border: none;
+          color: white;
+        " (click)="search()">
+        NEXT
+      </button>
+    </div>
+  </div>
+
+  <!-- Popup -->
+  <!-- <div *ngIf="showPopup" class="popup">
+    <div class="popup-content">
+      <span class="close" (click)="closePopup()">&times;</span>
+      <p>{{ errorMessage }}</p>
+      <button (click)="closePopup()">
+        OK
+      </button>
+    </div>
+  </div> -->
+
+  <div class="modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Warning</h5>
+        </div>
+        <div class="modal-body">
+          <p>{{ errorMessage }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closePopup()">Close</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" [routerLink]="['/customer/search']"
+            [queryParams]="{natId: natId}" (click)="closePopup()">Search</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
