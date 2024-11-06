@@ -38,13 +38,13 @@ public class IndCustBusinessRules {
     }
 
     public void checkIndCustExist(String natId){
-        Optional<IndividualCustomer> individualCustomer = indCustRepository.findByNationalityId(natId);
-        boolean checkNatId = indCustRepository.existsByNationalityId(natId);
-        if(individualCustomer.isPresent()) {
-            if (individualCustomer.get().getStatus() && checkNatId) {
-                throw new BusinessException("Bu Müşteri Zaten Kayıtlı!");
-            }
-        }
+        // Optional<IndividualCustomer> individualCustomer = indCustRepository.findByNationalityId(natId);
+        // boolean checkNatId = indCustRepository.existsByNationalityId(natId);
+        // if(individualCustomer.isPresent()) {
+        //     if (individualCustomer.get().getStatus() && checkNatId) {
+        //         throw new BusinessException("Bu Müşteri Zaten Kayıtlı!");
+        //     }
+        // }
     }
 
     public IndividualCustomer checkCustomerExist(UUID id){
